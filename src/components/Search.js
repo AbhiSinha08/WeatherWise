@@ -33,7 +33,7 @@ const Search = () => {
             <SearchBar updateRecents={updateRecents} />
             <hr className='mr-24 mb-2' />
             <Recents recents={recents} />
-            <hr className='text-cream/20 mr-4 mt-2' />
+            <hr className='text-cream/20 mr-4' />
         </div>
     );
 }

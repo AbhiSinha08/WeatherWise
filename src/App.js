@@ -4,7 +4,7 @@ import Details from './components/Details';
 import Search from './components/Search';
 import currentCityContext from './contexts/currentCityContext';
 import currentWeatherContext from './contexts/currentWeatherContext';
-import getCurrent from './utils/getCurrent';
+import getWeather from './utils/weatherAPI';
 
 function App() {
     const [currentCity, setCurrentCity] = useState("");
@@ -21,10 +21,20 @@ function App() {
         if (isInitialMount.current) {
             isInitialMount.current = false;
         } else {
-            localStorage.setItem("lastCitySearched", currentCity);
-            // Fetch data
+            async function handleCurrentCityChange() {
+                localStorage.setItem("lastCitySearched", currentCity);
+                const weatherDetails = await getWeather(currentCity);
+                if (weatherDetails)
+                    setCurrentWeather(weatherDetails);
+            }
+            handleCurrentCityChange();
         }
     }, [currentCity]);
+
+    useEffect(() => {
+        console.log("Current weather details changed");
+        console.log(currentWeather);
+    }, [currentWeather])
 
     return (
         <currentCityContext.Provider value={{currentCity, setCurrentCity}}>
