@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
-import currentWeatherContext from '../contexts/currentWeatherContext';
+import CurrentWeatherContext from '../contexts/CurrentWeatherContext';
 
 const CurrentWeather = () => {
-    const currentWeather = useContext(currentWeatherContext);
+    const currentWeather = useContext(CurrentWeatherContext);
 
     if (Object.keys(currentWeather).length !== 0) {
         const {

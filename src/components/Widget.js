@@ -1,10 +1,12 @@
 import React, {useContext} from 'react';
-import currentCityContext from '../contexts/currentCityContext';
-import currentWeatherContext from '../contexts/currentWeatherContext';
+import CurrentCityContext from '../contexts/CurrentCityContext';
+import CurrentWeatherContext from '../contexts/CurrentWeatherContext';
+import UnitContext from '../contexts/UnitContext';
 
 const Widget = () => {
-    const {currentCity} = useContext(currentCityContext);
-    const currentWeather = useContext(currentWeatherContext);
+    const {currentCity} = useContext(CurrentCityContext);
+    const currentWeather = useContext(CurrentWeatherContext);
+    const {unitC} = useContext(UnitContext);
 
     if (Object.keys(currentWeather).length !== 0) {
         const {
@@ -29,7 +31,7 @@ const Widget = () => {
             <div className='flex-grow flex flex-col justify-between pb-24'>
                 <div className='text-5xl'> {condition} </div>
                 <div className='flex justify-start items-end'>
-                    <span className='text-9xl'> {tempC}&deg; </span>
+                    <span className='text-9xl'> {unitC ? tempC : tempF}&deg; </span>
                     <div className='flex flex-col gap-2 pb-1 items-center'>
                         <span className='text-6xl'> {cityName} </span>
                         <span className='text-lg'>

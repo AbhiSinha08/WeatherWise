@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
-import currentCityContext from '../contexts/currentCityContext';
+import CurrentCityContext from '../contexts/CurrentCityContext';
 
 const Recents = (props) => {
-    const {setCurrentCity} = useContext(currentCityContext);
+    const {setCurrentCity} = useContext(CurrentCityContext);
 
     return (
         <div className='flex h-[80%] flex-col justify-evenly'>

@@ -1,11 +1,13 @@
 import React from 'react';
+import UnitToggle from './UnitToggle';
 import Widget from './Widget';
 
 const Dashboard = () => {
     return (
         <div className='h-full w-full pl-16 pt-12 pb-2 pr-4 text-white flex flex-col justify-between'>
-            <div>
+            <div className='flex justify-between'>
                 Weather App
+                <UnitToggle />
             </div>
             <Widget />
             <div className='flex justify-between mr-8 text-sm opacity-50'>

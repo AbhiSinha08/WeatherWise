@@ -1,8 +1,8 @@
 import React, {createContext} from "react";
 
-const currentWeatherContext = createContext({
+const CurrentWeatherContext = createContext({
     currentWeather: {},
     setCurrentWeather: (city) => {}
 })
 
-export default currentWeatherContext;
+export default CurrentWeatherContext;

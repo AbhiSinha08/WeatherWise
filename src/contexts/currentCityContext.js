@@ -1,8 +1,8 @@
 import React, {createContext} from "react";
 
-const currentCityContext = createContext({
+const CurrentCityContext = createContext({
     currentCity: "",
     setCurrentCity: (city) => {}
 })
 
-export default currentCityContext;
+export default CurrentCityContext;

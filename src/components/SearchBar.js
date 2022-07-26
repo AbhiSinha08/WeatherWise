@@ -1,12 +1,12 @@
 import React, {useState, useContext} from 'react';
 import { IconContext } from "react-icons";
 import { MdSearch } from 'react-icons/md';
-import currentCityContext from '../contexts/currentCityContext';
+import CurrentCityContext from '../contexts/CurrentCityContext';
 import capitalize from '../utils/capitalize';
 
 const SearchBar = (props) => {
     const [searchTerm, setSearchTerm] = useState("");
-    const {setCurrentCity} = useContext(currentCityContext);
+    const {setCurrentCity} = useContext(CurrentCityContext);
 
     function search(event) {
         const city = capitalize(searchTerm);

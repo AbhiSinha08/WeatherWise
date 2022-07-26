@@ -1,8 +1,10 @@
 import React, {useContext} from 'react';
-import currentWeatherContext from '../contexts/currentWeatherContext';
+import CurrentWeatherContext from '../contexts/CurrentWeatherContext';
+import UnitContext from '../contexts/UnitContext';
 
 const NextWeather = () => {
-    const currentWeather = useContext(currentWeatherContext);
+    const currentWeather = useContext(CurrentWeatherContext);
+    const {unitC} = useContext(UnitContext);
 
     if (Object.keys(currentWeather).length !== 0) {
         const {
@@ -44,8 +46,8 @@ const NextWeather = () => {
                         <img src={icon2} alt="Icon" className='h-12' />
                     </div>
                     <div className='flex flex-col items-end gap-4'>
-                        <span> max &nbsp; {maxC2} &deg;C </span>
-                        <span> min &nbsp; {minC2} &deg;C </span>
+                        <span> min &nbsp; {unitC ? minC2 : minF2} &deg;{unitC ? 'C' : 'F'} </span>
+                        <span> max &nbsp; {unitC ? maxC2 : maxF2} &deg;{unitC ? 'C' : 'F'} </span>
                     </div>
                 </div>
                 <div className='flex justify-between my-8'> 
@@ -56,8 +58,8 @@ const NextWeather = () => {
                         <img src={icon3} alt="Icon" className='h-12' />
                     </div>
                     <div className='flex flex-col items-end gap-4'>
-                        <span> max &nbsp; {maxC3} &deg;C </span>
-                        <span> min &nbsp; {minC3} &deg;C </span>
+                        <span> max &nbsp; {unitC ? maxC3 : maxF3} &deg;{unitC ? 'C' : 'F'} </span>
+                        <span> min &nbsp; {unitC ? minC3 : minF3} &deg;{unitC ? 'C' : 'F'} </span>
                     </div>
                 </div>
             </div>
