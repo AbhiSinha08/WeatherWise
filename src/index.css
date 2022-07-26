@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-image: url("../public/placeholder.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @apply transition-all duration-500;
+}
+
+.blur-bg {
+    @apply bg-base/80;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .blur-bg {
+        @apply bg-base/60 backdrop-filter backdrop-blur-md;
+    }
+}
+
+.scroll::-webkit-scrollbar {
+    @apply w-[0.5em] bg-transparent;
+}
+.scroll::-webkit-scrollbar-thumb {
+    @apply hover:bg-white/30;
+}
+.scroll {
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+a {
+    @apply text-blue-400 underline;
+}

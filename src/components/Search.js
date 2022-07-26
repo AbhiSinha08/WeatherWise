@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Recents from "./Recents";
 import SearchBar from './SearchBar';
-import capitalize from '../utils/capitalize';
 import add from '../utils/recentsArrayMethods';
 
 const Search = () => {
@@ -17,9 +16,8 @@ const Search = () => {
         })
     }, []);
 
-    function updateRecents(searchTerm) {
+    function updateRecents(city) {
         setRecents((prev) => {
-            const city = capitalize(searchTerm);
             return add([...prev], city);
         });
     }
@@ -31,10 +29,11 @@ const Search = () => {
     }, [recents]);
     
     return (
-        <div className='w-full h-[50%] pt-12 text-lg text-cream/70'>
+        <div className='w-full max-h-[50%] pt-12 text-lg text-cream/50'>
             <SearchBar updateRecents={updateRecents} />
-            <hr className='mr-24' />
+            <hr className='mr-24 mb-2' />
             <Recents recents={recents} />
+            <hr className='text-cream/20 mr-4 mt-2' />
         </div>
     );
 }
