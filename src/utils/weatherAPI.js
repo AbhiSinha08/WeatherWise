@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const key = "e165312d4ab34ac2b83233856222507";
+const key = process.env.REACT_APP_WEATHER_API_KEY;
 const url = "https://api.weatherapi.com/v1/forecast.json";
 const params = {
     key: key,
@@ -24,7 +24,7 @@ export default async function getWeather(city) {
         response = res;
     })
     .catch((error) => {
-        console.log(error);
+        console.error(error);
         if (error.response) {
             const code = error.response.status;
             if (code === 400) {

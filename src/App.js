@@ -6,6 +6,7 @@ import CurrentCityContext from './contexts/CurrentCityContext';
 import CurrentWeatherContext from './contexts/CurrentWeatherContext';
 import UnitContext from './contexts/UnitContext';
 import getWeather from './utils/weatherAPI';
+import getCityImage from './utils/cityImageSearchAPI';
 import ErrorContext from './contexts/ErrorContext';
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
                     else {
                         setError(false);
                         setCurrentWeather(weatherDetails);
+                        const imageURL = await getCityImage(currentCity);
+                        if (imageURL)
+                            document.body.style.backgroundImage = `url(${imageURL})`;
                     }
                 }
             }

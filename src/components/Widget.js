@@ -28,13 +28,13 @@ const Widget = () => {
         const localTime = new Date(time);
 
         return (
-            <div className='flex-grow flex flex-col justify-between pb-24 text-shadow'>
-                <div className='text-5xl'> {condition} </div>
-                <div className='flex justify-start items-end'>
+            <div className='flex-grow flex flex-col justify-between pb-24'>
+                <div className='text-5xl text-shadow-sm'> {condition} </div>
+                <div className='flex justify-start items-end text-shadow-md'>
                     <span className='text-9xl'> {unitC ? tempC : tempF}&deg; </span>
                     <div className='flex flex-col gap-2 pb-1 items-center'>
                         <span className='text-6xl'> {cityName} </span>
-                        <span className='text-lg'>
+                        <span className='text-lg text-shadow-xs'>
                             {
                                 `${localTime.toLocaleTimeString(
                                     'en-GB',
