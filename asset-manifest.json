@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/WeatherWise/static/css/main.2dbe4706.css",
+    "main.js": "/WeatherWise/static/js/main.5f09ed82.js",
+    "index.html": "/WeatherWise/index.html",
+    "main.2dbe4706.css.map": "/WeatherWise/static/css/main.2dbe4706.css.map",
+    "main.5f09ed82.js.map": "/WeatherWise/static/js/main.5f09ed82.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2dbe4706.css",
+    "static/js/main.5f09ed82.js"
+  ]
+}
