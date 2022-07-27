@@ -8,4 +8,5 @@
 - ```npm install --dev```
 - ```npm start```
 
+## App Deployed [here](https://abhisinha08.github.io/WeatherWise/)
 ### Mobile Layout in progress...
