@@ -22,16 +22,20 @@ const UnitToggle = () => {
     }, [unitC])
 
     return (
-        <div className='flex items-center text-3xl font-semibold bottom-10 mr-2 relative text-shadow'>
-            <span className='text-blue-400 mr-1'>&deg;F</span>
+        <div className='flex items-center text-3xl group font-semibold bottom-10 mr-2 relative'>
+            <span className='text-white/70 group-hover:text-white/90 transition duration-500 mr-1'>
+                &deg;F
+            </span>
             <button
             onClick={() => {setUnitC(!unitC)}}
-            className={`pt-1 ${unitC ? "text-orange" : "text-blue-400"}`}>
+            className="pt-1 text-white/80 group-hover:text-white transition duration-500">
                 <IconContext.Provider value={{ size: 45 }}>
                     {unitC ? <MdToggleOn /> : <MdToggleOff />}
                 </IconContext.Provider>
             </button>
-            <span className='text-orange'>&deg;C</span>
+            <span className='text-white/70 group-hover:text-white/90 transition duration-500'>
+                &deg;C
+            </span>
         </div>
     );
 }
