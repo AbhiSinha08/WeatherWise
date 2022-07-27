@@ -25,6 +25,21 @@ export default async function getWeather(city) {
     })
     .catch((error) => {
         console.log(error);
+        if (error.response) {
+            const code = error.response.status;
+            if (code === 400) {
+                response = {
+                    error: true,
+                    errorMessage: `No Matching location found: ${city}`
+                }
+            }
+            else if (code === 401) {
+                response = {
+                    error: true,
+                    errorMessage: "API key is invalid"
+                }
+            }
+        }
     })
 
     return response;
