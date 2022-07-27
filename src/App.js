@@ -17,6 +17,7 @@ function App() {
     const isInitialMount = useRef(true);
 
     useEffect(() => {
+        document.body.style.backgroundImage = `url(${process.env.PUBLIC_URL}/placeholder.jpg)`;
         let data = localStorage.getItem("lastCitySearched");
         if (data)
             setCurrentCity(data);

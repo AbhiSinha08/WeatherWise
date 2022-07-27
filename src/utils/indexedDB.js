@@ -17,13 +17,15 @@ function dbConnect(dbName, version, upgrade) {
 const objectStoreName = 'cityImages';
 let db;
 
-(async () => {
-    db = await dbConnect('indexedDB', 1.0, e => {
-        db = e.target.result;
-        const store = db.createObjectStore(objectStoreName, { keyPath: 'city' });
-    })
-  
-})();
+if (window.indexedDB) {
+    (async () => {
+        db = await dbConnect('indexedDB', 1.0, e => {
+            db = e.target.result;
+            const store = db.createObjectStore(objectStoreName, { keyPath: 'city' });
+        })
+    
+    })();
+}
 
 async function add(city, imageURL) {
     db.transaction([objectStoreName], 'readwrite')
@@ -32,11 +34,6 @@ async function add(city, imageURL) {
         city: city,
         image: imageURL
     });
-}
-async function del(city) {
-    db.transaction([objectStoreName], 'readwrite')
-    .objectStore(objectStoreName)
-    .add(city);
 }
 
 function getData(key) {
@@ -62,4 +59,9 @@ async function retrieve(key) {
     return result;
 }
 
-export {add, retrieve, del};
+if (!window.indexedDB) {
+    add = (key, value) => {}
+    retrieve = (key) => null
+}
+
+export {add, retrieve};

@@ -10,7 +10,7 @@ const Dashboard = () => {
     return (
         <div className='h-full w-full pl-16 pt-12 pb-2 pr-4 bg-slate-900/40 text-white flex flex-col justify-between'>
             <div className='flex justify-between text-shadow-sm'>
-                Weather App
+                WeatherWise.
                 <UnitToggle />
             </div>
             {error ? <Error message={error} /> : <Widget />}
