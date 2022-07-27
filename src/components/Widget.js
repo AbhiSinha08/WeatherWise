@@ -28,7 +28,7 @@ const Widget = () => {
         const localTime = new Date(time);
 
         return (
-            <div className='flex-grow flex flex-col justify-between pb-24'>
+            <div className='flex-grow flex flex-col justify-between pb-24 text-shadow'>
                 <div className='text-5xl'> {condition} </div>
                 <div className='flex justify-start items-end'>
                     <span className='text-9xl'> {unitC ? tempC : tempF}&deg; </span>

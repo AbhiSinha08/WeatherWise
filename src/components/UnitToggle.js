@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useRef} from 'react';
 import { MdToggleOff, MdToggleOn } from 'react-icons/md';
 import { IconContext } from "react-icons";
 import UnitContext from '../contexts/UnitContext';
-import { data } from 'autoprefixer';
 
 const UnitToggle = () => {
     const {unitC, setUnitC} = useContext(UnitContext);
@@ -23,11 +22,11 @@ const UnitToggle = () => {
     }, [unitC])
 
     return (
-        <div className='flex items-center gap-2 text-3xl bottom-10 mr-2 relative'>
-            <span className='text-blue-500'>&deg;F</span>
+        <div className='flex items-center text-3xl font-semibold bottom-10 mr-2 relative text-shadow'>
+            <span className='text-blue-400 mr-1'>&deg;F</span>
             <button
             onClick={() => {setUnitC(!unitC)}}
-            className={`pt-1 ${unitC ? "text-orange" : "text-blue-500"}`}>
+            className={`pt-1 ${unitC ? "text-orange" : "text-blue-400"}`}>
                 <IconContext.Provider value={{ size: 45 }}>
                     {unitC ? <MdToggleOn /> : <MdToggleOff />}
                 </IconContext.Provider>

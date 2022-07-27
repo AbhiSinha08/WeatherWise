@@ -33,3 +33,7 @@ body {
 a {
     @apply text-blue-400 underline;
 }
+
+.text-shadow {
+    text-shadow: 1px 1px 2px #000;
+}
