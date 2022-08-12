@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import CurrentWeatherContext from '../contexts/CurrentWeatherContext';
-import UnitContext from '../contexts/UnitContext';
+import CurrentWeatherContext from '../contexts/currentWeatherContext';
+import UnitContext from '../contexts/unitContext';
 
 const NextWeather = () => {
     const currentWeather = useContext(CurrentWeatherContext);

@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import CurrentCityContext from '../contexts/CurrentCityContext';
-import CurrentWeatherContext from '../contexts/CurrentWeatherContext';
-import UnitContext from '../contexts/UnitContext';
+import CurrentCityContext from '../contexts/currentCityContext';
+import CurrentWeatherContext from '../contexts/currentWeatherContext';
+import UnitContext from '../contexts/unitContext';
 
 const Widget = () => {
     const {currentCity} = useContext(CurrentCityContext);

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import CurrentCityContext from '../contexts/CurrentCityContext';
+import CurrentCityContext from '../contexts/currentCityContext';
 
 const Recents = (props) => {
     const {setCurrentCity} = useContext(CurrentCityContext);

@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useRef} from 'react';
 import { MdToggleOff, MdToggleOn } from 'react-icons/md';
 import { IconContext } from "react-icons";
-import UnitContext from '../contexts/UnitContext';
+import UnitContext from '../contexts/unitContext';
 
 const UnitToggle = () => {
     const {unitC, setUnitC} = useContext(UnitContext);

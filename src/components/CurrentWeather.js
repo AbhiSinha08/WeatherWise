@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import CurrentWeatherContext from '../contexts/CurrentWeatherContext';
+import CurrentWeatherContext from '../contexts/currentWeatherContext';
 
 const CurrentWeather = () => {
     const currentWeather = useContext(CurrentWeatherContext);

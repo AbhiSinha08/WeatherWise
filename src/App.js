@@ -2,12 +2,12 @@ import React, {useState, useEffect, useRef} from 'react';
 import Dashboard from './components/Dashboard';
 import Details from './components/Details';
 import Search from './components/Search';
-import CurrentCityContext from './contexts/CurrentCityContext';
-import CurrentWeatherContext from './contexts/CurrentWeatherContext';
-import UnitContext from './contexts/UnitContext';
+import CurrentCityContext from './contexts/currentCityContext';
+import CurrentWeatherContext from './contexts/currentWeatherContext';
+import UnitContext from './contexts/unitContext';
 import getWeather from './utils/weatherAPI';
 import getCityImage from './utils/cityImageSearchAPI';
-import ErrorContext from './contexts/ErrorContext';
+import ErrorContext from './contexts/errorContext';
 
 function App() {
     const [currentCity, setCurrentCity] = useState("");

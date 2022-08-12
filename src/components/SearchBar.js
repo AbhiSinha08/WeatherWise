@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import { IconContext } from "react-icons";
 import { MdSearch } from 'react-icons/md';
-import CurrentCityContext from '../contexts/CurrentCityContext';
+import CurrentCityContext from '../contexts/currentCityContext';
 import capitalize from '../utils/capitalize';
 
 const SearchBar = (props) => {

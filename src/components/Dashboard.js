@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import UnitToggle from './UnitToggle';
 import Widget from './Widget';
 import Error from './Error';
-import ErrorContext from '../contexts/ErrorContext';
+import ErrorContext from '../contexts/errorContext';
 
 const Dashboard = () => {
     const error = useContext(ErrorContext);
